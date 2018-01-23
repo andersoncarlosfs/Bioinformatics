@@ -254,20 +254,17 @@ links:</remarks>
     </index>
    </folder>
   </table>
-  <table id="TAB63" populated="true" UUID="f0d0445f-798a-4244-a002-a84cbabdb4c1" name="gene_ontology" objectType="TABLE" physicalName="gene_ontology" >
+  <table id="TAB63" populated="true" UUID="f0d0445f-798a-4244-a002-a84cbabdb4c1" name="go" objectType="TABLE" physicalName="go" >
    <remarks>description:
 origins: NCBI
 origins: Gene Ontology (GO)
 files: gene2go
 links:</remarks>
    <folder id="FOLTAB631" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL64" populated="true" UUID="d49f5bf2-895a-4d40-afe5-67d085f8387b" autoIncrement="false" autoIncrementSequenceName="gene_ontology_go_id_seq" defaultValue="" name="go_id" nullable="0" physicalName="go_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL64" populated="true" UUID="d49f5bf2-895a-4d40-afe5-67d085f8387b" autoIncrement="false" autoIncrementSequenceName="go_go_id_seq" defaultValue="" name="go_id" nullable="0" physicalName="go_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL65" populated="true" UUID="c22f8188-2313-45ca-8b96-9895063763f5" autoIncrement="false" autoIncrementSequenceName="gene_ontology_geneid_seq" defaultValue="" name="gene_id" nullable="0" physicalName="gene_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
-    </column>
-    <column id="COL66" populated="true" UUID="e4be6eb6-5975-4e42-8708-9e794490af13" autoIncrement="false" autoIncrementSequenceName="gene_ontology_category_seq" defaultValue="" name="category" nullable="0" physicalName="category" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL65" populated="true" UUID="e4be6eb6-5975-4e42-8708-9e794490af13" autoIncrement="false" autoIncrementSequenceName="go_category_seq" defaultValue="" name="category" nullable="0" physicalName="category" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
@@ -276,65 +273,93 @@ links:</remarks>
     <folder id="FOLTAB632" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB634" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX67" populated="true" UUID="46f0e313-6f9d-4d6e-bb86-c5f052655433" clustered="false" name="gene_ontology_pk" physicalName="go_id_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC68" populated="true" UUID="28f98d91-8704-4ec7-9684-a6913b4bf1d2" ascendingOrDescending="UNSPECIFIED" column-ref="COL64" name="go_id" physicalName="go_id" />
+    <index id="IDX66" populated="true" UUID="46f0e313-6f9d-4d6e-bb86-c5f052655433" clustered="false" name="go_pk" physicalName="go_id_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC67" populated="true" UUID="28f98d91-8704-4ec7-9684-a6913b4bf1d2" ascendingOrDescending="UNSPECIFIED" column-ref="COL64" name="go_id" physicalName="go_id" />
     </index>
    </folder>
   </table>
-  <table id="TAB69" populated="true" UUID="2a72b8ff-591a-4fd4-92ab-6bee3ecf8b89" name="go_term" objectType="TABLE" physicalName="go_term" >
+  <table id="TAB68" populated="true" UUID="2a72b8ff-591a-4fd4-92ab-6bee3ecf8b89" name="go_term" objectType="TABLE" physicalName="go_term" >
    <remarks>description:
 origins: NCBI
 origins: Gene Ontology (GO)
 files: gene2go
 links:</remarks>
-   <folder id="FOLTAB691" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL70" populated="true" UUID="9c7367e2-b539-47f5-9eff-49ffd7532dac" autoIncrement="false" autoIncrementSequenceName="go_term_go_id_seq" defaultValue="" name="go_id" nullable="0" physicalName="go_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+   <folder id="FOLTAB681" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL69" populated="true" UUID="9c7367e2-b539-47f5-9eff-49ffd7532dac" autoIncrement="false" autoIncrementSequenceName="go_term_go_id_seq" defaultValue="" name="go_id" nullable="0" physicalName="go_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL71" populated="true" UUID="d55b13b3-9044-4dbe-aff3-348c379b7600" autoIncrement="false" autoIncrementSequenceName="go_term_go_term_seq" defaultValue="" name="go_term" nullable="0" physicalName="go_term" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL70" populated="true" UUID="d55b13b3-9044-4dbe-aff3-348c379b7600" autoIncrement="false" autoIncrementSequenceName="go_term_go_term_seq" defaultValue="" name="go_term" nullable="0" physicalName="go_term" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
-    <folder id="FOLTAB693" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    <folder id="FOLTAB683" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
     </folder>
-    <folder id="FOLTAB692" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    <folder id="FOLTAB682" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
-    <folder id="FOLTAB694" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX72" populated="true" UUID="d6fcb732-98b4-482d-b5f1-445917088622" clustered="false" name="go_term_pk" physicalName="go_term_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC73" populated="true" UUID="52e20550-8f2c-468b-b48a-e7ae4f367a6d" ascendingOrDescending="UNSPECIFIED" column-ref="COL70" name="go_id" physicalName="go_id" />
+    <folder id="FOLTAB684" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX71" populated="true" UUID="d6fcb732-98b4-482d-b5f1-445917088622" clustered="false" name="go_term_pk" physicalName="go_term_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC72" populated="true" UUID="52e20550-8f2c-468b-b48a-e7ae4f367a6d" ascendingOrDescending="UNSPECIFIED" column-ref="COL69" name="go_id" physicalName="go_id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB73" populated="true" UUID="410ee3e8-1451-439b-918e-02f733841759" name="ncbi_go" objectType="TABLE" physicalName="ncbi_go" >
+   <remarks>description:
+origins: NCBI
+origins: Gene Ontology (GO)
+files: gene2go
+links:</remarks>
+   <folder id="FOLTAB731" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL74" populated="true" UUID="959fe6c8-b800-479a-8ca6-bafb896d54f0" autoIncrement="false" autoIncrementSequenceName="ncbi_gene_id_seq" defaultValue="" name="gene_id" nullable="0" physicalName="gene_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL75" populated="true" UUID="ea8f842f-b1fe-4517-973c-032e6c8127e4" autoIncrement="false" autoIncrementSequenceName="gene_ontology_go_id_seq" defaultValue="" name="go_id" nullable="0" physicalName="go_id" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB733" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB732" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB734" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX76" populated="true" UUID="b8b6477f-6fe1-4b9f-9af3-2b2590ea659d" clustered="false" name="ncbi_go_pk" physicalName="ncbi_go_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC77" populated="true" UUID="6dd71375-2e66-46db-ac7d-1cf66dd80832" ascendingOrDescending="UNSPECIFIED" column-ref="COL74" name="gene_id" physicalName="gene_id" />
+     <index-column id="IDC78" populated="true" UUID="4460002c-5efb-4383-9ba7-d98e5c3f9625" ascendingOrDescending="UNSPECIFIED" column-ref="COL75" name="go_id" physicalName="go_id" />
     </index>
    </folder>
   </table>
   <relationships>
-   <relationship id="REL74" populated="true" UUID="6b44067e-6ce3-4eee-88ee-15b47ea6e843" deferrability="7" deleteRule="3" fk-table-ref="TAB21" fkCardinality="7" identifying="true" name="gene_locus_tags_fk" physicalName="gene_locus_tags_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP75" populated="true" UUID="ce3ca148-ae78-457c-adc6-1cd564811a76" fk-column-ref="COL22" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL79" populated="true" UUID="6b44067e-6ce3-4eee-88ee-15b47ea6e843" deferrability="7" deleteRule="3" fk-table-ref="TAB21" fkCardinality="7" identifying="true" name="gene_locus_tags_fk" physicalName="gene_locus_tags_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP80" populated="true" UUID="ce3ca148-ae78-457c-adc6-1cd564811a76" fk-column-ref="COL22" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL76" populated="true" UUID="132c0aef-8b46-4c9f-9685-df5b22b33e16" deferrability="7" deleteRule="3" fk-table-ref="TAB27" fkCardinality="7" identifying="true" name="gene_synonyms_fk" physicalName="gene_synonyms_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP77" populated="true" UUID="233926e2-340d-4ba7-853a-a28dd4872c1f" fk-column-ref="COL28" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL81" populated="true" UUID="132c0aef-8b46-4c9f-9685-df5b22b33e16" deferrability="7" deleteRule="3" fk-table-ref="TAB27" fkCardinality="7" identifying="true" name="gene_synonyms_fk" physicalName="gene_synonyms_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP82" populated="true" UUID="233926e2-340d-4ba7-853a-a28dd4872c1f" fk-column-ref="COL28" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL78" populated="true" UUID="a0529b29-d4cb-477d-8b24-5ff6ab08e866" deferrability="7" deleteRule="3" fk-table-ref="TAB33" fkCardinality="7" identifying="true" name="gene_db_xref_fk" physicalName="gene_db_xref_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP79" populated="true" UUID="47aede07-a2bc-473d-a9f9-4c959abac405" fk-column-ref="COL34" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL83" populated="true" UUID="a0529b29-d4cb-477d-8b24-5ff6ab08e866" deferrability="7" deleteRule="3" fk-table-ref="TAB33" fkCardinality="7" identifying="true" name="gene_db_xref_fk" physicalName="gene_db_xref_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP84" populated="true" UUID="47aede07-a2bc-473d-a9f9-4c959abac405" fk-column-ref="COL34" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL80" populated="true" UUID="9c4bbaf2-f5df-40e7-b763-987594514610" deferrability="7" deleteRule="3" fk-table-ref="TAB39" fkCardinality="7" identifying="true" name="gene_chromosome_fk" physicalName="gene_chromosome_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP81" populated="true" UUID="d83ab515-3da8-4419-ab21-c030cc82364b" fk-column-ref="COL40" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL85" populated="true" UUID="9c4bbaf2-f5df-40e7-b763-987594514610" deferrability="7" deleteRule="3" fk-table-ref="TAB39" fkCardinality="7" identifying="true" name="gene_chromosome_fk" physicalName="gene_chromosome_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP86" populated="true" UUID="d83ab515-3da8-4419-ab21-c030cc82364b" fk-column-ref="COL40" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL82" populated="true" UUID="f2e441c7-e39f-4fde-b674-9d2fcba0a898" deferrability="7" deleteRule="3" fk-table-ref="TAB45" fkCardinality="7" identifying="true" name="gene_other_designation_fk" physicalName="gene_other_designation_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP83" populated="true" UUID="7e02f66d-5303-4ac9-a343-c0eb0bbb329c" fk-column-ref="COL46" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL87" populated="true" UUID="f2e441c7-e39f-4fde-b674-9d2fcba0a898" deferrability="7" deleteRule="3" fk-table-ref="TAB45" fkCardinality="7" identifying="true" name="gene_other_designation_fk" physicalName="gene_other_designation_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP88" populated="true" UUID="7e02f66d-5303-4ac9-a343-c0eb0bbb329c" fk-column-ref="COL46" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL84" populated="true" UUID="85280b69-cdc7-4f5e-a35e-195739c821e0" deferrability="7" deleteRule="3" fk-table-ref="TAB51" fkCardinality="7" identifying="true" name="gene_feature_type_fk" physicalName="gene_feature_type_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP85" populated="true" UUID="dc361ebc-afda-4914-97b8-64a4f1759f08" fk-column-ref="COL52" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL89" populated="true" UUID="85280b69-cdc7-4f5e-a35e-195739c821e0" deferrability="7" deleteRule="3" fk-table-ref="TAB51" fkCardinality="7" identifying="true" name="gene_feature_type_fk" physicalName="gene_feature_type_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP90" populated="true" UUID="dc361ebc-afda-4914-97b8-64a4f1759f08" fk-column-ref="COL52" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL86" populated="true" UUID="d13a6f17-ab62-47ef-bbc3-83c48d82656f" deferrability="7" deleteRule="3" fk-table-ref="TAB57" fkCardinality="7" identifying="true" name="gene_map_location_fk" physicalName="gene_map_location_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP87" populated="true" UUID="20a48675-5638-40c5-bb7f-480f529aab99" fk-column-ref="COL58" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL91" populated="true" UUID="d13a6f17-ab62-47ef-bbc3-83c48d82656f" deferrability="7" deleteRule="3" fk-table-ref="TAB57" fkCardinality="7" identifying="true" name="gene_map_location_fk" physicalName="gene_map_location_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP92" populated="true" UUID="20a48675-5638-40c5-bb7f-480f529aab99" fk-column-ref="COL58" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL88" populated="true" UUID="2f06abf6-5546-41d9-9b5b-a905f5924bec" deferrability="7" deleteRule="3" fk-table-ref="TAB63" fkCardinality="7" identifying="false" name="gene_ontology_fk" physicalName="gene_ontology_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP89" populated="true" UUID="7fa030bd-d959-486a-86dd-3f9acfee5d76" fk-column-ref="COL65" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL93" populated="true" UUID="b0f0b6ff-bcc6-4c9c-be18-11454763a9bf" deferrability="7" deleteRule="3" fk-table-ref="TAB73" fkCardinality="7" identifying="true" name="ncbi_ncbi_go_fk" physicalName="ncbi_ncbi_go_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP94" populated="true" UUID="d23c0bb4-12fe-4de2-83ac-c9c6b5a1e06e" fk-column-ref="COL74" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL90" populated="true" UUID="bf77a637-34a0-4c9d-a887-08b5eb74fda8" deferrability="7" deleteRule="3" fk-table-ref="TAB13" fkCardinality="7" identifying="true" name="ontology_evidence_fk" physicalName="ontology_evidence_fk" pk-table-ref="TAB63" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP91" populated="true" UUID="c13cd893-6d5e-45d6-aa82-a856f16d17ee" fk-column-ref="COL14" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL64" />
+   <relationship id="REL95" populated="true" UUID="bf77a637-34a0-4c9d-a887-08b5eb74fda8" deferrability="7" deleteRule="3" fk-table-ref="TAB13" fkCardinality="7" identifying="true" name="ontology_evidence_fk" physicalName="ontology_evidence_fk" pk-table-ref="TAB63" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP96" populated="true" UUID="c13cd893-6d5e-45d6-aa82-a856f16d17ee" fk-column-ref="COL14" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL64" />
    </relationship>
-   <relationship id="REL92" populated="true" UUID="added775-1941-497d-b99a-37d228a8a369" deferrability="7" deleteRule="3" fk-table-ref="TAB69" fkCardinality="7" identifying="true" name="gene_ontology_go_term_fk" physicalName="gene_ontology_go_term_fk" pk-table-ref="TAB63" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP93" populated="true" UUID="b17e0213-e68c-424e-83bc-98dc6e10657c" fk-column-ref="COL70" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL64" />
+   <relationship id="REL97" populated="true" UUID="added775-1941-497d-b99a-37d228a8a369" deferrability="7" deleteRule="3" fk-table-ref="TAB68" fkCardinality="7" identifying="true" name="gene_ontology_go_term_fk" physicalName="gene_ontology_go_term_fk" pk-table-ref="TAB63" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP98" populated="true" UUID="b17e0213-e68c-424e-83bc-98dc6e10657c" fk-column-ref="COL69" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL64" />
+   </relationship>
+   <relationship id="REL99" populated="true" UUID="829a1d61-f6ad-4aaa-8cb4-fdd5d045d59b" deferrability="7" deleteRule="3" fk-table-ref="TAB73" fkCardinality="7" identifying="true" name="gene_ontology_ncbi_go_fk" physicalName="gene_ontology_ncbi_go_fk" pk-table-ref="TAB63" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP100" populated="true" UUID="8b13fa34-b2b4-49d9-9b0c-4d00624c4abf" fk-column-ref="COL75" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL64" />
    </relationship>
   </relationships>
  </target-database>
@@ -342,7 +367,7 @@ links:</remarks>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="0.7071067811865471" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
-  <table-pane table-ref="TAB1" x="479" y="424" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB1" x="421" y="350" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB13" x="114" y="715" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB21" x="164" y="121" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB27" x="386" y="213" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
@@ -351,18 +376,20 @@ links:</remarks>
   <table-pane table-ref="TAB45" x="775" y="134" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB51" x="808" y="208" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB57" x="876" y="284" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB63" x="130" y="493" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB69" x="456" y="777" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-link relationship-ref="REL74" pkConnection="0.45387453874538747" fkConnection="0.8112449799196787" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL76" pkConnection="0.5640394088669951" fkConnection="0.5396825396825397" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="24"/>
-  <table-link relationship-ref="REL78" pkConnection="0.33579335793357934" fkConnection="0.6219081272084805" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL80" pkConnection="0.5960591133004927" fkConnection="0.9011406844106464" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL82" pkConnection="0.6995073891625616" fkConnection="0.04924242424242424" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL84" pkConnection="0.7536945812807881" fkConnection="0.10861423220973783" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL86" pkConnection="0.8694581280788177" fkConnection="0.11678832116788321" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
-  <table-link relationship-ref="REL88" pkConnection="0.5485714285714286" fkConnection="0.40425531914893614" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
-  <table-link relationship-ref="REL90" pkConnection="0.49344978165938863" fkConnection="0.5" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL92" pkConnection="0.7174887892376681" fkConnection="0.3739130434782609" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-pane table-ref="TAB63" x="118" y="551" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB68" x="456" y="777" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB73" x="517" y="568" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL79" pkConnection="0.21714285714285714" fkConnection="0.8112449799196787" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="66"/>
+  <table-link relationship-ref="REL81" pkConnection="0.2263681592039801" fkConnection="0.6585365853658537" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL83" pkConnection="0.05142857142857143" fkConnection="0.6219081272084805" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="66"/>
+  <table-link relationship-ref="REL85" pkConnection="0.5960591133004927" fkConnection="0.7186311787072244" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL87" pkConnection="0.6995073891625616" fkConnection="0.04924242424242424" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL89" pkConnection="0.7536945812807881" fkConnection="0.10861423220973783" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL91" pkConnection="0.14857142857142858" fkConnection="1.0" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="65"/>
+  <table-link relationship-ref="REL95" pkConnection="0.49344978165938863" fkConnection="0.5" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL97" pkConnection="0.7174887892376681" fkConnection="0.3739130434782609" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL93" pkConnection="0.6144278606965174" fkConnection="0.4449152542372881" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL99" pkConnection="0.6190476190476191" fkConnection="0.36507936507936506" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">

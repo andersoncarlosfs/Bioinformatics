@@ -18,8 +18,6 @@ https://docs.google.com/document/d/1Of_tNK4v_Qh_Kx61FRhn_TY7aUqiXYrnezDSDkglBQk/
 https://docs.google.com/presentation/d/1VGMY9mrfD9J23zt3DhfgEVo7IPnPT95DhfBFP6YhR5c/edit?usp=sharing
 
 # Materials
-https://techoverflow.net/2013/11/30/parsing-ncbi-geneinfo-in-python/
-
-http://www.postgresqltutorial.com/postgresql-python/
-
-**UnitProt Manual :** https://web.expasy.org/docs/userman.html
+**NCBI**:https://techoverflow.net/2013/11/30/parsing-ncbi-geneinfo-in-python/
+**UnitProt**: https://web.expasy.org/docs/userman.html
+**PostgreSQL**: http://www.postgresqltutorial.com/postgresql-python/

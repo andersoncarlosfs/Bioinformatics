@@ -104,6 +104,9 @@
 <a href="#db_xref">db_xref</a>
 </li>
 <li>
+<a href="#description">description</a>
+</li>
+<li>
 <a href="#evidence">evidence</a>
 </li>
 <li>
@@ -227,6 +230,42 @@
 <ul>
 <li>
 <a href="#ncbi">ncbi</a> through (gene_id)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>description<a name="description"></a>
+</h1>
+<h2>
+      (Physical Name: description)
+      </h2>
+<p class="comment">description: <br>origins: UniProt<br>files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz<br>links: https://web.expasy.org/docs/userman.html</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">protein_id (PK)
+                &nbsp;(<a href="#uniprot">FK</a>)
+              </td><td class="tdTableDefinition">protein_id</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">category</td><td class="tdTableDefinition">category</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">type</td><td class="tdTableDefinition">type</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">description</td><td class="tdTableDefinition">description</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#uniprot">uniprot</a> through (protein_id)</li>
 </ul>
 </div>
 </div>
@@ -363,7 +402,7 @@
 <h2>
       (Physical Name: go_uniprot)
       </h2>
-<p class="comment">description: <br>origins: Gene Ontology (GO)<br>origins: UniProt<br>files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz<br>files: gene2go<br>links: </p>
+<p class="comment">description: <br>origins: Gene Ontology (GO)<br>origins: UniProt<br>files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz<br>files: gene2go<br>links:</p>
 </div>
 <div class="table">
 <table class="tableDefinition" width="100%">
@@ -632,6 +671,8 @@
 <a href="#accession_number">accession_number</a> referencing (protein_id)</li>
 <li>
 <a href="#go_uniprot">go_uniprot</a> referencing (protein_id)</li>
+<li>
+<a href="#description">description</a> referencing (protein_id)</li>
 </ul>
 </div>
 </div>

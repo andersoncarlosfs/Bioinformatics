@@ -9,6 +9,19 @@ files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+
 links: https://web.expasy.org/docs/userman.html';
 
 
+CREATE TABLE public.description (
+                protein_id VARCHAR NOT NULL,
+                category VARCHAR NOT NULL,
+                type VARCHAR NOT NULL,
+                description VARCHAR NOT NULL,
+                CONSTRAINT description_pk PRIMARY KEY (protein_id)
+);
+COMMENT ON TABLE public.description IS 'description: 
+origins: UniProt
+files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz
+links: https://web.expasy.org/docs/userman.html';
+
+
 CREATE TABLE public.accession_number (
                 protein_id VARCHAR NOT NULL,
                 accession_number VARCHAR NOT NULL,
@@ -42,7 +55,7 @@ origins: Gene Ontology (GO)
 origins: UniProt
 files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz
 files: gene2go
-links: ';
+links:';
 
 
 CREATE TABLE public.go_term (
@@ -188,6 +201,13 @@ ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE public.go_uniprot ADD CONSTRAINT uniprot_go_uniprot_fk
+FOREIGN KEY (protein_id)
+REFERENCES public.uniprot (protein_id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE public.description ADD CONSTRAINT uniprot_name_fk
 FOREIGN KEY (protein_id)
 REFERENCES public.uniprot (protein_id)
 ON DELETE NO ACTION

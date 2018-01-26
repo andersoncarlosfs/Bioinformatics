@@ -353,7 +353,7 @@ origins: UniProt
 files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz
 links: https://web.expasy.org/docs/userman.html#AC_line</remarks>
    <folder id="FOLTAB831" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL84" populated="true" UUID="67a3d537-8939-4d1a-9977-0be025056c80" autoIncrement="false" autoIncrementSequenceName="accession_number_protein_id_seq" defaultValue="" name="protein_id" nullable="0" physicalName="protein_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL84" populated="true" UUID="67a3d537-8939-4d1a-9977-0be025056c80" autoIncrement="false" autoIncrementSequenceName="uniprot_protein_id_seq" defaultValue="" name="protein_id" nullable="0" physicalName="protein_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL85" populated="true" UUID="fba6c2b5-01bf-4fb0-ab65-bd1bc818998b" autoIncrement="false" autoIncrementSequenceName="accession_number_accession_number_seq" defaultValue="" name="accession_number" nullable="0" physicalName="accession_number" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -442,7 +442,7 @@ links: </remarks>
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="0.7071067811865475" viewportX="55" viewportY="2" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">

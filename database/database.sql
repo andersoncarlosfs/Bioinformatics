@@ -1,4 +1,25 @@
 
+CREATE TABLE public.uniprot (
+                protein_id VARCHAR NOT NULL,
+                CONSTRAINT uniprot_pk PRIMARY KEY (protein_id)
+);
+COMMENT ON TABLE public.uniprot IS 'description: 
+origins: UniProt
+files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz
+links: https://web.expasy.org/docs/userman.html';
+
+
+CREATE TABLE public.accession_number (
+                protein_id VARCHAR NOT NULL,
+                accession_number VARCHAR NOT NULL,
+                CONSTRAINT accession_number_pk PRIMARY KEY (protein_id, accession_number)
+);
+COMMENT ON TABLE public.accession_number IS 'description: 
+origins: UniProt
+files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz
+links: https://web.expasy.org/docs/userman.html#AC_line';
+
+
 CREATE TABLE public.go (
                 go_id VARCHAR NOT NULL,
                 category VARCHAR NOT NULL,
@@ -9,6 +30,19 @@ origins: NCBI
 origins: Gene Ontology (GO)
 files: gene2go
 links:';
+
+
+CREATE TABLE public.go_uniprot (
+                go_id VARCHAR NOT NULL,
+                protein_id VARCHAR NOT NULL,
+                CONSTRAINT go_uniprot_pk PRIMARY KEY (go_id, protein_id)
+);
+COMMENT ON TABLE public.go_uniprot IS 'description: 
+origins: Gene Ontology (GO)
+origins: UniProt
+files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz
+files: gene2go
+links: ';
 
 
 CREATE TABLE public.go_term (
@@ -146,6 +180,20 @@ links: https://www.ncbi.nlm.nih.gov/genbank/eukaryotic_genome_submission_annotat
 links: https://www.ncbi.nlm.nih.gov/genbank/genomesubmit_annotation/#locus_tag';
 
 
+ALTER TABLE public.accession_number ADD CONSTRAINT uniprot_accession_number_fk
+FOREIGN KEY (protein_id)
+REFERENCES public.uniprot (protein_id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE public.go_uniprot ADD CONSTRAINT uniprot_go_uniprot_fk
+FOREIGN KEY (protein_id)
+REFERENCES public.uniprot (protein_id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
 ALTER TABLE public.evidence ADD CONSTRAINT ontology_evidence_fk
 FOREIGN KEY (go_id)
 REFERENCES public.go (go_id)
@@ -161,6 +209,13 @@ ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE public.ncbi_go ADD CONSTRAINT gene_ontology_ncbi_go_fk
+FOREIGN KEY (go_id)
+REFERENCES public.go (go_id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE public.go_uniprot ADD CONSTRAINT go_go_uniprot_fk
 FOREIGN KEY (go_id)
 REFERENCES public.go (go_id)
 ON DELETE NO ACTION

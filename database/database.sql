@@ -9,6 +9,17 @@ files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+
 links: https://web.expasy.org/docs/userman.html';
 
 
+CREATE TABLE public.keyword (
+                protein_id VARCHAR NOT NULL,
+                keyword VARCHAR NOT NULL,
+                CONSTRAINT keyword_pk PRIMARY KEY (protein_id, keyword)
+);
+COMMENT ON TABLE public.keyword IS 'description: 
+origins: UniProt
+files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz
+links: https://web.expasy.org/docs/userman.html#KW_line';
+
+
 CREATE TABLE public.description (
                 protein_id VARCHAR NOT NULL,
                 category VARCHAR NOT NULL,
@@ -149,7 +160,7 @@ links:';
 
 CREATE TABLE public.chromosome (
                 gene_id INTEGER NOT NULL,
-                chromosome VARCHAR NOT NULL,
+                chromosome INTEGER NOT NULL,
                 CONSTRAINT chromosome_pk PRIMARY KEY (gene_id, chromosome)
 );
 COMMENT ON TABLE public.chromosome IS 'description:
@@ -208,6 +219,13 @@ ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE public.description ADD CONSTRAINT uniprot_name_fk
+FOREIGN KEY (protein_id)
+REFERENCES public.uniprot (protein_id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE public.keyword ADD CONSTRAINT uniprot_keyword_fk
 FOREIGN KEY (protein_id)
 REFERENCES public.uniprot (protein_id)
 ON DELETE NO ACTION

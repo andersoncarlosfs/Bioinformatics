@@ -38,7 +38,7 @@ CREATE TABLE public.description (
                 category VARCHAR NOT NULL,
                 type VARCHAR NOT NULL,
                 description VARCHAR NOT NULL,
-                CONSTRAINT description_pk PRIMARY KEY (protein_id)
+                CONSTRAINT description_pk PRIMARY KEY (protein_id, category, type, description)
 );
 COMMENT ON TABLE public.description IS 'description: 
 origins: UniProt

@@ -1,12 +1,25 @@
 
 CREATE TABLE public.uniprot (
                 protein_id VARCHAR NOT NULL,
+                flag VARCHAR NOT NULL,
                 CONSTRAINT uniprot_pk PRIMARY KEY (protein_id)
 );
 COMMENT ON TABLE public.uniprot IS 'description: 
 origins: UniProt
 files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz
 links: https://web.expasy.org/docs/userman.html';
+
+
+CREATE TABLE public.gene_name (
+                protein_id VARCHAR NOT NULL,
+                type VARCHAR NOT NULL,
+                name VARCHAR NOT NULL,
+                CONSTRAINT gene_name_pk PRIMARY KEY (protein_id, type, name)
+);
+COMMENT ON TABLE public.gene_name IS 'description: 
+origins: UniProt
+files: UniProt/uniprot-cancer+AND+reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B--.txt.gz
+links: https://web.expasy.org/docs/userman.html#GN_line';
 
 
 CREATE TABLE public.keyword (
@@ -227,6 +240,13 @@ ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE public.keyword ADD CONSTRAINT uniprot_keyword_fk
+FOREIGN KEY (protein_id)
+REFERENCES public.uniprot (protein_id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE public.gene_name ADD CONSTRAINT uniprot_gene_name_fk
 FOREIGN KEY (protein_id)
 REFERENCES public.uniprot (protein_id)
 ON DELETE NO ACTION

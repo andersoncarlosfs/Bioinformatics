@@ -174,7 +174,7 @@ links:';
 
 CREATE TABLE public.chromosome (
                 gene_id INTEGER NOT NULL,
-                chromosome INTEGER NOT NULL,
+                chromosome VARCHAR NOT NULL,
                 CONSTRAINT chromosome_pk PRIMARY KEY (gene_id, chromosome)
 );
 COMMENT ON TABLE public.chromosome IS 'description:

@@ -3,8 +3,22 @@ import pandas as pd
 from pandas import DataFrame
 import os
 import sys
+import gzip
+from io import StringIO
 
 VERBOSE = False
+
+# extract the data from a .gz file, assuming it contains a txt file and returns an array of lines
+def extract(filepath):
+    if (VERBOSE):
+        print("Extracting " + filepath)
+        
+    f = gzip.open(filepath, 'rb')
+    file_content = f.read()
+    f.close()
+    text = file_content.decode("utf-8")
+    #return pd.read_csv(StringIO(text), delimiter="\t")
+    return text.split('\n')
 
 # str.split(delimiter) returns also empty elements; this function simply removes them
 def split(s, delimiter):
@@ -167,15 +181,24 @@ class DataEntry:
 
 # ../Datasets/UniProtKB/unitprot-cancer/unitprot-cancer.txt
 def loadFileData(filepath):
+    
+    cancer_lines = []
+       
+    splite = filepath.split('.')
+
+    cf = extract(filepath) if splite and splite[-1] == 'gz' else open(filepath)
+
     if (VERBOSE):
         print("Loading " + filepath)
-    cancer_lines = []
-    with open(filepath) as cf:
-        for line in cf:
-            content = split(line, ' ')
-            if len(content) > 0 and content[0] in ['ID', 'AC', 'DE', 'GN', 'KW', 'DR']:
-                cancer_lines.append((content[0], (' '.join(content[1:]))[:-1]))
-
+    
+    for line in cf:
+        content = split(line, ' ')
+        if len(content) > 0 and content[0] in ['ID', 'AC', 'DE', 'GN', 'KW', 'DR']:
+            cancer_lines.append((content[0], (' '.join(content[1:]))[:-1]))
+            
+    if "close" in dir(cf):
+        cf.close()
+        
     cancerData = []
 
     # Loop external data

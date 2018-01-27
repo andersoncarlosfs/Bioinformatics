@@ -85,7 +85,8 @@ CREATE TABLE public.evidence (
                 go_id VARCHAR NOT NULL,
                 evidence VARCHAR NOT NULL,
                 qualifier VARCHAR NOT NULL,
-                CONSTRAINT evidence_pk PRIMARY KEY (go_id, evidence, qualifier)
+                source VARCHAR NOT NULL,
+                CONSTRAINT evidence_pk PRIMARY KEY (go_id, evidence, qualifier, source)
 );
 COMMENT ON TABLE public.evidence IS 'description: This relation contains information about any evidence
 origins: NCBI

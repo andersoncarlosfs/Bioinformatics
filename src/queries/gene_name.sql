@@ -1,4 +1,4 @@
-INSERT INTO TABLE gene_name VALUES
+INSERT INTO gene_name VALUES
 ('P53', 'Name', 'TP53'),
 ('P53', 'Synonym', 'P53'),
 ('BRCA1', 'Name', 'BRCA1'),

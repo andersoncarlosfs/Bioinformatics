@@ -1,4 +1,4 @@
-INSERT INTO TABLE accession_number VALUES
+INSERT INTO accession_number VALUES
 ('P53', 'P04637'),
 ('P53', 'Q15086'),
 ('P53', 'Q15087'),

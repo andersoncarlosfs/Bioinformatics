@@ -1,4 +1,4 @@
-INSERT INTO TABLE description VALUES
+INSERT INTO description VALUES
 ('P53', 'AltName', 'Full', 'Antigen NY-CO-13'),
 ('P53', 'AltName', 'Full', 'Phosphoprotein p53'),
 ('P53', 'AltName', 'Full', 'Tumor suppressor p53'),

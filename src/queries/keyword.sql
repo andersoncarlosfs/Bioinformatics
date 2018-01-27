@@ -1,4 +1,4 @@
-INSERT INTO TABLE keyword VALUES
+INSERT INTO keyword VALUES
 ('P53', '3D-structure'),
 ('P53', 'Acetylation'),
 ('P53', 'Activator'),

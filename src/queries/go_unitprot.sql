@@ -1,4 +1,4 @@
-INSERT INTO TABLE go_unitprot VALUES
+INSERT INTO go_unitprot VALUES
 ('P53', '0005737'),
 ('P53', '0005829'),
 ('P53', '0005783'),

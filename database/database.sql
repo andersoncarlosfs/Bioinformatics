@@ -85,7 +85,7 @@ links:';
 CREATE TABLE public.go_term (
                 go_id VARCHAR NOT NULL,
                 go_term VARCHAR NOT NULL,
-                CONSTRAINT go_term_pk PRIMARY KEY (go_id)
+                CONSTRAINT go_term_pk PRIMARY KEY (go_id, go_term)
 );
 COMMENT ON TABLE public.go_term IS 'description:
 origins: NCBI
